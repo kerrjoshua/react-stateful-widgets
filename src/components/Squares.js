@@ -25,7 +25,7 @@ export default function Squares() {
   // of the currently active square. On page load there's no active square,
   // so the value of 'activeSquare' should be null.
 const [ squares, setSquares] = useState(listOfSquareIds);
-const [ activeSquare, setActiveSquare ] = useState();
+const [ activeSquare, setActiveSquare ] = useState(null);
 
   const getClassName = id => {
     // This is NOT a click handler but a helper, used inside the JSX (see below).
@@ -41,7 +41,7 @@ const [ activeSquare, setActiveSquare ] = useState();
     // Set the id argument to become the active id in state
     // (unless it already is, in which case we should reset
     // the currently active square id back to initial state).
-    activeSquare === id ? setActiveSquare('') : setActiveSquare(id);
+    activeSquare === id ? setActiveSquare(null) : setActiveSquare(id);
   };
 
   return (
